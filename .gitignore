@@ -1,0 +1,46 @@
+
+# Node.js dependencies
+node_modules/
+frontend/node_modules/
+backend/node_modules/
+
+# Build output
+dist/
+build/
+frontend/dist/
+frontend/build/
+backend/dist/
+backend/build/
+
+# Environment files (NEVER track secrets)
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+frontend/.env*
+backend/.env*
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# System/Editor files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Coverage/test output
+coverage/
+*.lcov
+
+# Misc
+*.log
+
+# Optional: If using Vite/Next.js/Tailwind
+frontend/.next/
+frontend/.cache/
+frontend/.turbo/
+backend/.cache/
