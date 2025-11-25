@@ -10,10 +10,10 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install
 
-RUN adduser -D yukthamukhi
+RUN useradd -m yukthamukhi
 
 
-USER yukthamukhi:group
+USER yukthamukhi
 
 
 # Copy the rest of the backend code

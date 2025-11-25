@@ -3,6 +3,9 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 require("dotenv").config();
 
+const dbUrl = process.env.DATABASE_URL;
+const redisUrl = process.env.REDIS_URL;
+
 const app = express();
 const PORT = process.env.PORT || 4000;
 
