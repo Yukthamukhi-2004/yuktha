@@ -1,7 +1,15 @@
+require("dotenv").config();
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-require("dotenv").config();
+
+const productsRouter = require("./routes/products");
+app.use("/api/products", productsRouter);
+const cartRouter = require("./routes/cart");
+app.use("/api/cart", cartRouter);
+const authRouter = require("./routes/auth");
+app.use("/api/auth", authRouter);
 
 const dbUrl = process.env.DATABASE_URL;
 const redisUrl = process.env.REDIS_URL;
