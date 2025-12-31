@@ -28,15 +28,20 @@ async function getProduct(req, res) {
 
 async function createProduct(req, res) {
   try {
-    const { name, price } = req.body;
-    if (!name || price == null) {
-      return res.status(400).json({ message: "name and price required" });
-    }
+    const { name, description, price } = req.body;
 
-    const newProduct = await productModel.createProduct({ id, name, price });
-    res.status(201).json(newProduct);
+    if (!name || !price) {
+      return res.status(400).json({ message: "Name and price are required" });
+    }
+    const product = await productModel.createProduct({
+      name,
+      description,
+      price,
+    });
+
+    res.status(201).json(product);
   } catch (err) {
-    console.error(err);
+    console.error("Create product error:", err);
     res.status(500).json({ message: "Error creating product" });
   }
 }
