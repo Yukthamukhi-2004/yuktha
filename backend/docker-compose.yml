@@ -2,7 +2,7 @@ version: "3.8"
 
 services:
   db:
-    image: postgres:16
+    image: postgres
     restart: always
     environment:
       POSTGRES_USER: yuktha
@@ -24,7 +24,7 @@ services:
       - db
       - redis
     environment:
-      DATABASE_URL: postgres://yuktha:secret@db:5433/flipkartdb
+      DATABASE_URL: postgres://yuktha:secret@db:5432/flipkartdb
       REDIS_URL: redis://redis:6379
     ports:
       - "4000:4000"

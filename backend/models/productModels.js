@@ -15,10 +15,10 @@ async function getProductById(id) {
   return result.rows[0];
 }
 
-async function createProduct({ name, price }) {
+async function createProduct({ name, description, price }) {
   const result = await db.query(
-    "INSERT INTO products (name, price) VALUES ($1, $2) RETURNING id, name, price",
-    [name, price]
+    `INSERT INTO products (name,description, price) VALUES ($1, $2) RETURNING id, name,description,price,created_at`,
+    [name, description || null, price]
   );
   return result.rows[0];
 }
