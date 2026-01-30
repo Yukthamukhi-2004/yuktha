@@ -1,8 +1,8 @@
 import React, { useState, useRef } from "react";
-import Logo from "./Logo";
+import { useNavigate } from "react-router-dom";
 import SearchBar from "./SearchBar";
 import HamburgerMenu from "./HamburgerMenu";
-import ForgotPasswordDialog from "../stores/ForgotPasswordDialog";
+import ForgotPasswordDialog from "./ForgotPasswordDialog";
 import { cartStore } from "../stores/CartStore";
 import { observer } from "mobx-react-lite";
 import { OverlayPanel } from "primereact/overlaypanel";
@@ -19,6 +19,7 @@ const passwordPattern =
   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*#?&.,;:])[A-Za-z\d@$!%*#?&.,;:]{10,16}$/;
 
 const Header = observer(() => {
+  const navigate = useNavigate();
   const [showLogin, setShowLogin] = useState(false);
   const [showSignIn, setShowSignIn] = useState(false);
   const [showForgetPswd, setForgetPswd] = useState(false);
@@ -71,7 +72,7 @@ const Header = observer(() => {
     setErrors(errs);
     if (Object.keys(errs).length > 0) return;
     alert(
-      `Signed in as:\nName: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}`
+      `Signed in as:\nName: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone}`,
     );
     setShowSignIn(false);
     setForm({ name: "", email: "", phone: "" });
@@ -80,7 +81,6 @@ const Header = observer(() => {
 
   return (
     <header className="header">
-      <Logo />
       <SearchBar />
       <div
         className="header-actions"

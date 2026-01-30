@@ -1,53 +1,66 @@
 import React, { useRef } from "react";
+import { useNavigate } from "react-router-dom";
 import { Menu } from "primereact/menu";
 import { Button } from "primereact/button";
-import "primereact/resources/themes/lara-light-cyan/theme.css"; // already included in your project
-import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
 
-const menuOptions = [
-  {
-    label: "Profile",
-    icon: "pi pi-user",
-  },
-  {
-    label: "Orders",
-    icon: "pi pi-book",
-  },
-  {
-    label: "Wishlist",
-    icon: "pi pi-heart",
-  },
-  {
-    label: "Rewards",
-    icon: "pi pi-star",
-  },
-  {
-    label: "GiftCards",
-    icon: "pi pi-gift",
-  },
-];
-
 const HamburgerMenu = () => {
-  const menu = useRef(null);
+  const menuRef = useRef(null);
+  const navigate = useNavigate();
+
+  const menuItems = [
+    {
+      label: "Profile",
+      icon: "pi pi-user",
+      command: () => navigate("/profile"),
+    },
+    {
+      label: "Orders",
+      icon: "pi pi-shopping-bag",
+      command: () => navigate("/orders"),
+    },
+    {
+      label: "Wishlist",
+      icon: "pi pi-heart",
+      command: () => navigate("/wishlist"),
+    },
+    {
+      label: "Rewards",
+      icon: "pi pi-star",
+      command: () => navigate("/rewards"),
+    },
+    {
+      label: "Gift Cards",
+      icon: "pi pi-gift",
+      command: () => navigate("/gift-cards"),
+    },
+    {
+      separator: true,
+    },
+    {
+      label: "Logout",
+      icon: "pi pi-sign-out",
+      command: () => {
+        // Handle logout logic
+        console.log("Logout clicked");
+      },
+    },
+  ];
 
   return (
-    <div style={{ display: "inline-block", position: "relative" }}>
+    <div className="hamburger-menu-container">
       <Button
         icon="pi pi-bars"
-        label="Menu"
-        size="small"
-        onClick={(e) => menu.current.toggle(e)}
-        aria-controls="menu_popup"
-        aria-haspopup
-        className="menu-btn"
+        border="#667eea"
+        className="hamburger-button p-button-text p-button-rounded"
+        onClick={(e) => menuRef.current.toggle(e)}
+        aria-label="Menu"
       />
       <Menu
-        model={menuOptions}
+        model={menuItems}
         popup
-        ref={menu}
-        id="menu_popup"
-        style={{ minWidth: 160 }}
+        ref={menuRef}
+        className="hamburger-menu-popup"
       />
     </div>
   );

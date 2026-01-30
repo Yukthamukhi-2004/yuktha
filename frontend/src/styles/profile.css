@@ -1,0 +1,353 @@
+/* Profile Page Container */
+/* Profile Page Container */
+.profile-page-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 2rem;
+  position: relative; /* Added for positioning wrong button */
+}
+
+/* Wrong button container - moved outside card */
+.wrong-button-container {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  z-index: 1000;
+}
+
+.wrong-button-container .p-button {
+  width: 3rem !important;
+  height: 3rem !important;
+  background: rgba(255, 255, 255, 0.2) !important;
+  backdrop-filter: blur(10px);
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  transition: all 0.3s ease;
+}
+
+.wrong-button-container .p-button:hover {
+  background: rgba(255, 255, 255, 0.3) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+  transform: scale(1.1);
+}
+
+.wrong-button-container .p-button .pi {
+  font-size: 1.5rem !important;
+  color: white !important;
+}
+
+/* Profile Wrapper */
+.profile-wrapper {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+/* Profile Card */
+.profile-card {
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  position: relative;
+}
+
+/* Profile Header */
+.profile-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  padding: 3rem 2rem 2rem;
+  color: white;
+  text-align: center;
+}
+
+.photo-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.profile-photo-container {
+  position: relative;
+  width: 150px;
+  height: 150px;
+}
+
+.profile-photo,
+.profile-photo-placeholder {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  border: 5px solid white;
+  object-fit: cover;
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.camera-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: #2196f3 !important;
+  border: 3px solid white !important;
+  width: 40px !important;
+  height: 40px !important;
+}
+
+.photo-menu {
+  min-width: 200px;
+}
+
+.photo-menu .p-button {
+  justify-content: flex-start !important;
+}
+
+/* Profile Name */
+.profile-name h2 {
+  margin: 0;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.profile-name p {
+  margin: 0.5rem 0 0;
+  opacity: 0.9;
+}
+
+/* Profile Content */
+.profile-content {
+  padding: 2rem;
+}
+
+.profile-section {
+  margin-bottom: 2rem;
+}
+
+.profile-section:last-child {
+  margin-bottom: 0;
+}
+
+/* Profile Info Card */
+.profile-info-card .p-card-title {
+  color: #667eea;
+  margin-bottom: 1.5rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.profile-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.profile-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid #eee;
+}
+
+.profile-field:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.field-label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #666;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.field-label i {
+  color: #667eea;
+  font-size: 1rem;
+}
+
+.field-value-and-edit {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-height: 2.5rem;
+}
+
+.field-value {
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  flex: 1;
+  word-break: break-word;
+}
+
+.field-value.empty-value {
+  color: #999;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.edit-button {
+  color: #667eea !important;
+  width: 2.5rem !important;
+  height: 2.5rem !important;
+  margin-left: 1rem;
+}
+
+.edit-button .pi {
+  font-size: 1rem !important;
+}
+
+/* Account Actions */
+.account-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  padding-top: 1rem;
+  border-top: 2px solid #f0f0f0;
+  margin-top: 1rem;
+}
+
+.account-actions .p-button {
+  min-width: 180px;
+  height: 3rem;
+  font-weight: 600;
+}
+
+/* Modal Styles */
+.profile-edit-modal .p-dialog-content {
+  padding: 1.5rem !important;
+}
+
+.profile-edit-modal .p-dialog-header {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.modal-content label {
+  font-weight: 500;
+  color: #333;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+/* Photo Viewer */
+.profile-photo-viewer .p-dialog-content {
+  padding: 0 !important;
+  background: #000 !important;
+}
+
+.profile-photo-viewer .p-dialog-header {
+  background: #000 !important;
+  color: white !important;
+  border-bottom: 1px solid #333;
+}
+
+.photo-viewer-content {
+  text-align: center;
+}
+
+.enlarged-photo {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+}
+
+.no-photo {
+  padding: 3rem;
+  color: #666;
+}
+
+.no-photo i {
+  color: #ccc;
+  margin-bottom: 1rem;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .profile-page-container {
+    padding: 1rem;
+  }
+
+  .wrong-button-container {
+    top: 1rem;
+    right: 1rem;
+  }
+
+  .wrong-button-container .p-button {
+    width: 2.5rem !important;
+    height: 2.5rem !important;
+  }
+
+  .profile-content {
+    padding: 1rem;
+  }
+
+  .account-actions {
+    flex-direction: column;
+  }
+
+  .account-actions .p-button {
+    width: 100%;
+    min-width: auto;
+  }
+
+  .profile-header {
+    padding: 2rem 1rem 1.5rem;
+  }
+
+  .profile-name h2 {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: 769px) {
+  .profile-field {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  .field-label {
+    width: 180px;
+    flex-shrink: 0;
+  }
+
+  .field-value-and-edit {
+    flex: 1;
+    max-width: calc(100% - 200px);
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-photo-container {
+    width: 120px;
+    height: 120px;
+  }
+
+  .profile-photo,
+  .profile-photo-placeholder {
+    width: 120px;
+    height: 120px;
+  }
+
+  .camera-button {
+    width: 35px !important;
+    height: 35px !important;
+    bottom: 5px;
+    right: 5px;
+  }
+}
